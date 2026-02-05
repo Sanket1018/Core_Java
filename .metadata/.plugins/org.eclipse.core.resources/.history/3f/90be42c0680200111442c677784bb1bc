@@ -1,0 +1,19 @@
+package stream;
+
+import java.util.ArrayList;
+import java.util.stream.Stream;
+
+public class FirstDemo {
+
+	public static void main(String[] args) {
+		// Apporoch1
+		Stream<Integer> numbers = Stream.of(1,2,3,4);
+		
+		//Apporoch 2 
+		ArrayList<String> names = new ArrayList<>();	
+		names.add("Sanket");
+		names.add("Rohan");
+
+	}
+
+}

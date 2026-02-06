@@ -1,0 +1,19 @@
+package stream;
+
+import java.util.stream.Stream;
+
+public class EmployeeDemo {
+	public static void main(String[] args) {
+		Employee e1 = new Employee("Sanket",20,80000);
+		Employee e2 = new Employee("Rohan",23,90000);
+		Employee e3 = new Employee("Akash",24,100000);
+		
+		Stream<Employee> emp = Stream.of(e1,e2,e3);
+		
+		// get the employees whose salary is greater than 85000
+		
+		emp.stream().filter()
+		
+	}
+
+}

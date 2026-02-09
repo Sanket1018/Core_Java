@@ -1,0 +1,52 @@
+package stream;
+
+import java.util.stream.Stream;
+
+public class PersonDemo {
+	public static void main(String[] args) {
+		Person p1 = new Person("Sanket", "India");
+		Person p2 = new Person("John","USA");
+		Person p3 = new Person("Rohan","Canda");
+		Person p4 = new Person("Akash","Uk");
+		
+		Stream<Person> person= Stream.of(p1,p2,p3,p4);
+		
+		// Check the person of certain country is matches/present or not
+		boolean check_result = person.anyMatch(p -> p.getCountry().equals("Canada"));
+		System.out.println("The result of your question is : "+check_result);
+	}
+}
+
+
+class Person{
+	
+	private String name;
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getCountry() {
+		return country;
+	}
+
+	public void setCountry(String country) {
+		this.country = country;
+	}
+
+	private String country;
+	
+	@Override
+	public String toString() {
+		return "Person [name=" + name + ", country=" + country + "]";
+	}
+
+	public Person(String name, String country) {
+		super();
+		this.name = name;
+		this.country = country;
+	}	
+}

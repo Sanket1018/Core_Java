@@ -1,0 +1,27 @@
+package stream;
+
+public class PersonDemo {
+	Person p1 = new Person("Sanket", "India");
+	Person p2 = new Person("John","USA");
+	Person p3 = new Person("Rohan","Canda");
+	Person p4 = new Person("Akash","Uk");
+
+}
+
+
+class Person{
+	
+	String name;
+	String country;
+	
+	@Override
+	public String toString() {
+		return "Person [name=" + name + ", country=" + country + "]";
+	}
+
+	public Person(String name, String country) {
+		super();
+		this.name = name;
+		this.country = country;
+	}	
+}

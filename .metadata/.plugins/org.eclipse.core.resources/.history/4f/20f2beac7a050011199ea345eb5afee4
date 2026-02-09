@@ -1,0 +1,23 @@
+package stream;
+
+public class PersonDemo {
+	Person p1 = new Person("Sanket", 22);
+	Person p2 = n
+
+}
+
+
+class Person{
+	String name;
+	String country;
+	
+	
+	public Person(String name, String country) {
+		super();
+		this.name = name;
+		country = country;
+	}
+	
+	
+	
+}

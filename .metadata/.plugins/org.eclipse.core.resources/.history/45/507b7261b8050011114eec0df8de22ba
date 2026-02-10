@@ -1,0 +1,10 @@
+package stream;
+
+public class SpecialIterator {
+	public static void main(String[] args) {
+		
+		Stream<String> 
+		
+	}
+
+}

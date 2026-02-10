@@ -1,12 +1,20 @@
 package stream;
 
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class EmployeeDemo {
 	public static void main(String[] args) {
-		Employee e1 = new Employee("Sanket",23,80000);
-		Employee e2 = new Employee("Rohan",23,90000);
-		Employee e3 = new Employee("Akash",24,100000);
+		Employee e1 = new Employee("Sanket",23,80000,"USA");
+		Employee e2 = new Employee("Rohan",23,90000,"INDIA");
+		Employee e3 = new Employee("Akash",24,100000,"CHINA");
+		Employee e4 = new Employee("Nitin",25,50000,"INDIA");
+		Employee e5 = new Employee("Virat",25,50000,"USA");
 		
 		Stream<Employee> emp = Stream.of(e1,e2,e3);
 		
@@ -15,6 +23,36 @@ public class EmployeeDemo {
 		emp.filter( e -> e.salary >= 85000)
 			.map(e -> e.name+ "-"+e.age)
 			.forEach(e -> System.out.println(e));
+		
+		// W.A.P to get MAX,MIN AND AVG salary from given employees data
+		
+		// Maximum salary
+		List<Employee> emp_list1 = Arrays.asList(e1,e2,e3);
+		
+		Optional<Employee> max = emp_list1.stream()
+			.collect(Collectors.maxBy(Comparator.comparing(e -> e.salary)));
+		
+		System.out.println("Max salary : "+max.get().salary);
+		
+		// Minimum salary
+		Optional<Employee> min = emp_list1.stream().collect(Collectors.minBy(Comparator.comparing(e -> e.salary)));
+		System.out.println("Min salary : "+min.get().salary);
+		System.out.println("--------------------");
+		
+		// Average salary
+		Double avg_salary = emp_list1.stream()
+			.collect(Collectors.averagingDouble(e-> e.salary));
+		System.out.println("Avrage salary"+avg_salary);
+	
+		System.out.println("--------------------");
+		
+		
+		// Group the employees according to the country
+		
+		Map<String,List<Employee>> data = emp_list1.stream().collect(Collectors.groupingBy(e -> e.country));
+		System.out.println(data);
+		
+		System.out.println(data);	
 		
 	}
 

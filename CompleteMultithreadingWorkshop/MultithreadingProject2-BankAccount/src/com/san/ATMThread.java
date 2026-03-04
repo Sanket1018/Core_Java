@@ -16,6 +16,6 @@ public class ATMThread extends Thread{
 	
 	public void run()
 	{
-		account.withdraw(4000);
+		account.withdraw(10000);
 	}
 }

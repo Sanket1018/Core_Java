@@ -11,6 +11,7 @@ public class GPayThread extends Thread{
 	
 	public void run()
 	{
-		account.deposite(5000);
+		account.deposite(20000);
+		System.out.println("Depositing");
 	}
 }
